@@ -1,0 +1,56 @@
+<h3>Home</h3>
+<!--
+<% if !current_user.nil? and current_user.admin? %>
+  <% @users.each do |user| %>
+    <p>User: <%=link_to user.email, user %> Role: <%= user.role unless user.role.nil? %></p>
+  <% end %>
+<% end %>
+-->
+<div>
+
+<div class="row">
+	<% @products.each do |product| %>
+  <div class="col-md-3">
+	<div class="prod">
+		<div class="prod_img">
+			Pictures (<%= @image.find_by_product_id('@product.id') %>)
+			
+		</div>
+		<div class="prod_txt"><%= product.name %><br />
+		<%= link_to('View Product', product, :class => 'btn btn-primary')  %>
+		<%= button_to 'Add to Cart' , line_items_path(:product_id => product) %>
+		</div>
+	</div>
+   </div>
+   <% end %>
+</div>
+
+
+</div>
+<h1>products AVailable</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Unit price</th>
+      <th>Quantity</th>
+      <th>Manufacturer</th>
+	   <th></th>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.unit_price %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.manufacturer_id %></td>
+        <td><%= link_to 'Show', product %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

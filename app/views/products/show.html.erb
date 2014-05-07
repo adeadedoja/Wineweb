@@ -1,3 +1,148 @@
+<style>
+		img#main {
+			border: 1px #ccc solid;
+			padding: 2px;
+			margin: 10px;
+		}
+		.item nav {
+			display: none;
+			margin: 0 10px;
+		}
+		.item nav a {
+			border: 1px #ccc solid;
+			padding: 2px 2px 0;
+			display: block;
+			float: left;
+			margin: 2px;
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;	
+			transition: all .3s ease-in-out;		
+		}
+		.item nav a:first-child {
+			margin-left: 0;
+		}
+		.item nav a:hover {
+			-webkit-transform: scale(1.1);
+			-moz-transform: scale(1.1);	
+			transform: scale(1.1);				
+		}
+		.item nav a.active {
+			background: #FEFFC0;
+			border-color: #ECD95C;
+		}
+	</style>
+<div class="row">
+	<div class="col-md-2">
+		<div class="side1">
+			<div class="sidetop">
+			HOME
+			</div>
+			<% @categories.each do |category| %>
+			 +<%= link_to category.name, category %> <br />
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-10">
+		<div class="side1">
+			<div class="sidetop">
+			<ol class="breadcrumb">
+			  <li><a href="#">Home</a></li>
+			  <li><a href="#">Product</a></li>
+			  <li class="active"><%= @product.name %></li>
+			</ol>
+			</div>
+			<div class="">
+				<div class="col-md-5">
+					
+					<ol class="product_image">
+						<%= render @product_image %>
+					</ol>
+					<article class="item">
+						<aside class="preview">
+							<img id="main" src="/images/shoe-inside.png" width="300" height="220" alt="Alt title of image">
+							<nav>
+								<a href="/images/shoe-inside.png"><img src="/images/shoe-inside.png" width="100" height="73" alt="Side of the shoe"></a>
+								<a href="/images/shoe-front.png"><img src="/images/shoe-front.png" width="91" height="73" alt="Front of the shoe"></a>		
+								<a href="/images/shoe-back.png"><img src="/images/shoe-back.png" width="91" height="73" alt="Back of the shoe"></a>		
+							</nav>
+						</aside>
+					</article>
+					<br />
+					<div class="clear"></div>
+					<h1>7,234 Views</h1>
+					<% if !current_user.nil? and current_user.admin? %>
+					<%= link_to 'Edit', edit_product_path(@product), :class => 'btn btn-primary btn-sm' %>|<%= link_to 'Back', products_path, :class => 'btn btn-primary btn-sm' %>
+					<% end %>
+				</div>
+				<div class="col-md-7">
+					<p>
+					  <strong>Name:</strong>
+					  <%= @product.name %>
+					</p>
+
+					<p>
+					  <strong>Description:</strong>
+					  <%= @product.description %>
+					</p>
+
+					<p>
+					  <strong>Unit price:</strong>
+					  <%= @product.unit_price %>
+					</p>
+
+					<p>
+					  <strong>Quantity:</strong>
+					  <%= @product.quantity %>
+					</p>
+
+					<p>
+					  <strong>Manufacturer:</strong>
+					  <%= @product.manufacturer_id %>
+					</p>
+
+					<p>
+					  <strong>Category:</strong>
+					  <%= @product.category_id %>
+					</p>
+
+					<p>
+					  <strong>Created at:</strong>
+					  <%= @product.created_at %>
+					</p>
+
+					<p>
+					  <strong>Updated at:</strong>
+					  <%= @product.updated_at %>
+					</p>
+
+					<p>
+					  <strong>Views:</strong>
+					  <%= @product.views %>
+					</p>
+
+					<p>
+					  <strong>Available size:</strong>
+					  <%= @product.available_size %>
+					</p>
+
+					<p>
+					  <strong>Available color:</strong>
+					  <%= @product.available_color %>
+					</p>
+
+					<p>
+					  <strong>Quantity sold:</strong>
+					  <%= @product.quantity_sold %>
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
 <p id="notice"><%= notice %></p>
 <h2>Add Pictures</h2>
 

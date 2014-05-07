@@ -5,12 +5,14 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+	@categories = Category.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
 	@product_image = @product.product_image
+	@categories = Category.all
   end
 
   # GET /products/new

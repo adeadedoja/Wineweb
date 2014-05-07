@@ -2,7 +2,8 @@ class HomeController < ApplicationController
   def index
     @users = User.all
     @products = Product.all
-	@image = ProductImage.all
+	@product_images = ProductImage.all
 	@cart = current_cart
+	@categories = Category.all
   end
 end

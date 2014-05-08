@@ -17,6 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
+	
 	$("aside.preview nav").show();
 	var previewImg = $("img#main");
 	$("a:first").addClass("active");

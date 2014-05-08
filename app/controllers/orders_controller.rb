@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+      @cart = current_cart
+  @categories = Category.all
     @orders = Order.all
     @orders2 = Order.where(:user_id => current_user.id)
   end
@@ -11,11 +13,14 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+      @cart = current_cart
+  @categories = Category.all
    @line_items = LineItem.where(:order_id => params[:id])
   end
 
   # GET /orders/new
   def new
+  @categories = Category.all
 	@cart = current_cart
 	if @cart.line_items.empty?
 		redirect_to store_url, :notice => "Your cart is empty"
@@ -31,7 +36,8 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-	
+	 @cart = current_cart
+  @categories = Category.all
     @order = Order.new(order_params)
 	@order.add_line_items_from_cart(current_cart)
 	@order.user_id = current_user.id

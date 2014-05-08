@@ -3,11 +3,15 @@ class UsersController < ApplicationController
   after_action :verify_authorized, except: [:show]
 
   def index
+      @cart = current_cart
+  @categories = Category.all
     @users = User.all
 	authorize @users
   end
 
   def show
+      @cart = current_cart
+  @categories = Category.all
     @user = User.find(params[:id])
     unless current_user.admin?
       unless @user == current_user
@@ -17,6 +21,8 @@ class UsersController < ApplicationController
   end
 
   def update
+      @cart = current_cart
+  @categories = Category.all
     @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
@@ -27,6 +33,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+      @cart = current_cart
+  @categories = Category.all
     user = User.find(params[:id])
     authorize user
     unless user == current_user

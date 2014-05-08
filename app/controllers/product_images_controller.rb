@@ -4,6 +4,8 @@ class ProductImagesController < ApplicationController
   # GET /product_images
   # GET /product_images.json
   def index
+      @cart = current_cart
+  @categories = Category.all
     @product_images = ProductImage.all
   end
 
@@ -14,6 +16,8 @@ class ProductImagesController < ApplicationController
 
   # GET /product_images/new
   def new
+      @cart = current_cart
+  @categories = Category.all
     @product_image = ProductImage.new
   end
 
@@ -24,6 +28,8 @@ class ProductImagesController < ApplicationController
   # POST /product_images
   # POST /product_images.json
   def create
+      @cart = current_cart
+  @categories = Category.all
     @product_image = ProductImage.new(product_image_params)
 
     respond_to do |format|
@@ -40,6 +46,8 @@ class ProductImagesController < ApplicationController
   # PATCH/PUT /product_images/1
   # PATCH/PUT /product_images/1.json
   def update
+      @cart = current_cart
+  @categories = Category.all
     respond_to do |format|
       if @product_image.update(product_image_params)
         format.html { redirect_to @product_image, notice: 'Product image was successfully updated.' }
@@ -54,6 +62,8 @@ class ProductImagesController < ApplicationController
   # DELETE /product_images/1
   # DELETE /product_images/1.json
   def destroy
+      @cart = current_cart
+  @categories = Category.all
     @product_image.destroy
     respond_to do |format|
       format.html { redirect_to product_images_url }

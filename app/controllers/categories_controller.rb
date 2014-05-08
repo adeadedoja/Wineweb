@@ -5,27 +5,36 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+      @cart = current_cart
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+      @cart = current_cart
+  @categories = Category.all
 	@categories = Category.all
 	@products = Product.where(:category_id => params[:id])
   end
 
   # GET /categories/new
   def new
+      @cart = current_cart
+  @categories = Category.all
     @category = Category.new
   end
 
   # GET /categories/1/edit
   def edit
+      @cart = current_cart
+  @categories = Category.all
   end
 
   # POST /categories
   # POST /categories.json
   def create
+      @cart = current_cart
+  @categories = Category.all
     @category = Category.new(category_params)
 
     respond_to do |format|
@@ -42,6 +51,8 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
+      @cart = current_cart
+  @categories = Category.all
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to @category, notice: 'Category was successfully updated.' }
@@ -56,6 +67,8 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
+      @cart = current_cart
+  @categories = Category.all
     @category.destroy
     respond_to do |format|
       format.html { redirect_to categories_url }

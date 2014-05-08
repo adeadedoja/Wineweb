@@ -2,20 +2,20 @@
 	<div class="col-md-2">
 		<div class="side1">
 			<div class="sidetop">
-			Categories
+			CATEGORIES
 			</div>
 			
-			<% @categories.each do |category| %>
-			 <span class="glyphicon glyphicon-search"></span> <%= link_to category.name, category %> <br />
-			<% end %>
+				<div id="category" >
+					<%= render @categories %>
+				</div>
 		</div>
 	</div>
 	<div class="col-md-10">
 		<div class="side1">
 			<div class="sidetop">
 			<ol class="breadcrumb">
-			  <li><a href="#">Home</a></li>
-			  <li><a href="#">Category</a></li>
+			  <li><%= link_to 'Home', root_path, :class => 'sid' %></li></li>
+			  <li><%= link_to "category", categories_path, :class => 'sid' %></li>
 			  <li class="active"><%= @category.name %></li>
 			</ol>
 			</div>

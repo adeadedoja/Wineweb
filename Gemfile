@@ -15,6 +15,7 @@ gem 'devise'
 gem 'pundit'
 gem 'simple_form'
 gem 'thin'
+gem 'impressionist'
 gem 'rspec-rails', '2.13.1'
 group :development, :test  do
     gem 'sqlite3'
@@ -23,7 +24,6 @@ group :production do
   gem 'pg', '0.12.2'
   gem 'rails_12factor', '0.0.2'
   gem 'heroku', '~> 3.6.0'
-  gem 'thin'
 end
 
 group :test do

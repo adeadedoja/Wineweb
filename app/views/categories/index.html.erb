@@ -1,4 +1,41 @@
-<h1>Listing categories</h1>
+<div class="row">
+  <div class="col-md-2">
+    <div class="side1">
+      <div class="sidetop">
+      CATEGORIES
+      </div>
+      
+        <div id="category" >
+          <%= render @categories %>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div class="side1">
+      <div class="sidetop">
+      <ol class="breadcrumb">
+        <li><%= link_to 'Home', root_path, :class => 'sid' %></li></li>
+        <li><%= link_to "category", categories_path, :class => 'sid' %></li>
+      </ol>
+      </div>
+      <h1>Listing categories</h1>
+        <ul class="list-group">
+         <% @categories.each do |category| %>
+          <li class="list-group-item">
+            <span class="badge">14 Products Available</span>
+            <h3><b><%= category.name %></b></h3>
+            <%= category.description %> <br />
+            <%= link_to 'View Category', category, :class => 'btn btn-primary btn-sm' %> <% if !current_user.nil? and current_user.admin? %> | <%= link_to 'Edit', edit_category_path(category), :class => 'btn btn-info btn-sm' %> | <%= link_to 'Destroy', category, method: :delete, :class => 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' } %> <% end %>
+          </li>
+         <% end %>
+        </ul>
+        
+    </div>
+  </div>
+  
+</div>
+
+
 
 <table>
   <thead>

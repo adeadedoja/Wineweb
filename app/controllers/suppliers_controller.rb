@@ -5,6 +5,8 @@ class SuppliersController < ApplicationController
   # GET /suppliers.json
   def index
     @suppliers = Supplier.all
+      @cart = current_cart
+     @categories = Category.all
   end
 
   # GET /suppliers/1

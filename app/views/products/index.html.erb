@@ -3,23 +3,22 @@
 		<div class="side1">
 			<div class="sidetop">
 			Categories
-			</div>
-			
-			<% @categories.each do |category| %>
-			+<%= link_to category.name, category %> <br />
-			 
-			<% end %>
+			</div>			
+				<div id="category" >
+					<%= render @categories %>
+				</div>
 		</div>
 	</div>
 	<div class="col-md-10">
 		<div class="side1">
 			<div class="sidetop">
 			<ol class="breadcrumb">
-			  <li><a href="#">Home</a></li>
-			  <li><a href="#">Product</a></li>
+			  <li><%= link_to 'Home', root_path, :class => 'sid' %></li></li>
+			  <li><%= link_to "Product", products_path, :class => 'sid' %></li>
 			  
 			</ol>
 			</div>
+			<%= sortable "Name", :sort => "name" %> | <%= sortable "Price", :sort => "unit_price" %>
 			<div class="row">
 				<% @products.each do |product| %>
 			  <div class="col-md-4">

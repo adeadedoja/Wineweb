@@ -1,23 +1,29 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  impressionist actions: [:show], unique: [:session_hash]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.order(params[:sort])
+     @cart = current_cart
 	@categories = Category.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+
 	@product_image = @product.product_image
 	@categories = Category.all
+     @cart = current_cart
   end
 
   # GET /products/new
   def new
+      @categories = Category.all
     @product = Product.new
+     @cart = current_cart
   end
 
   # GET /products/1/edit
@@ -27,6 +33,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+      @categories = Category.all
+     @cart = current_cart
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -43,6 +51,8 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+     @categories = Category.all
+     @cart = current_cart
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -57,6 +67,8 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+     @categories = Category.all
+     @cart = current_cart
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url }

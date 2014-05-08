@@ -5,6 +5,8 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers.json
   def index
     @manufacturers = Manufacturer.all
+      @cart = current_cart
+  @categories = Category.all
   end
 
   # GET /manufacturers/1
@@ -15,15 +17,21 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers/new
   def new
     @manufacturer = Manufacturer.new
+      @cart = current_cart
+  @categories = Category.all
   end
 
   # GET /manufacturers/1/edit
   def edit
+      @cart = current_cart
+  @categories = Category.all
   end
 
   # POST /manufacturers
   # POST /manufacturers.json
   def create
+      @cart = current_cart
+     @categories = Category.all
     @manufacturer = Manufacturer.new(manufacturer_params)
 
     respond_to do |format|
@@ -40,6 +48,8 @@ class ManufacturersController < ApplicationController
   # PATCH/PUT /manufacturers/1
   # PATCH/PUT /manufacturers/1.json
   def update
+      @cart = current_cart
+  @categories = Category.all
     respond_to do |format|
       if @manufacturer.update(manufacturer_params)
         format.html { redirect_to @manufacturer, notice: 'Manufacturer was successfully updated.' }
@@ -54,6 +64,8 @@ class ManufacturersController < ApplicationController
   # DELETE /manufacturers/1
   # DELETE /manufacturers/1.json
   def destroy
+      @cart = current_cart
+  @categories = Category.all
     @manufacturer.destroy
     respond_to do |format|
       format.html { redirect_to manufacturers_url }

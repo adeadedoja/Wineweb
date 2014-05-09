@@ -13,6 +13,7 @@
   <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
+
 <%= render @cart if (params[:controller] == 'products') %>
 <%= render @cart if (params[:controller] == 'home') %>
 <%= render @cart if (params[:controller] == 'categories') %>
@@ -22,7 +23,6 @@
 <%= render @cart if (params[:controller] == 'manufacturers') %>
 <%= render @cart if (params[:controller] == 'orders') %>
 <%= render @cart if (params[:controller] == 'product_images') %>
-<%= render @cart if (params[:controller] == 'registrations') %>
 <%= render @cart if (params[:controller] == 'shippers') %>
 <%= render @cart if (params[:controller] == 'static_pages') %>
 <%= render @cart if (params[:controller] == 'suppliers') %>

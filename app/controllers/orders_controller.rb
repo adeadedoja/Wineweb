@@ -16,6 +16,13 @@ class OrdersController < ApplicationController
       @cart = current_cart
   @categories = Category.all
    @line_items = LineItem.where(:order_id => params[:id])
+   respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = OrderPdf.new(@order,view_context)
+        send_data pdf.render, filename: "Order_#{@order.created_at.strftime("%d/%m/%Y")}.pdf", type: 'application/pdf'
+      end
+    end
   end
 
   # GET /orders/new

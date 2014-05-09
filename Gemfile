@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'thin'
 gem 'impressionist'
 gem 'rspec-rails', '2.13.1'
+gem 'prawn'
 group :development, :test  do
     gem 'sqlite3'
 end

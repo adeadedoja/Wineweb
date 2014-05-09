@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:search]).order("created_at DESC")
     else 
     @products = Product.order(params[:sort])
-  end
+    end
      @cart = current_cart
 	@categories = Category.all
   end

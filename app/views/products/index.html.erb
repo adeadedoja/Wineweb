@@ -3,11 +3,11 @@
 		<div class="side1">
 			
 				<ul class="list-group">
-				  <li class="list-group-item list-group-item-success">Edit Profile</li>
-				  <li class="list-group-item list-group-item-info">View Order History</li>
+				  <li class="list-group-item list-group-item-success"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+				  <li class="list-group-item list-group-item-info"><%= link_to 'Order History', orders_path %></li>
 				  <li class="list-group-item"></li>
 				  <li class="list-group-item list-group-item-warning"><b>Categories</b></li>
-		
+				<li class="list-group-item"><%= link_to 'All Categories', categories_path %></li>
 				
 					<%= render @categories %>
 				</ul>
@@ -23,6 +23,9 @@
 			</ol>
 						Sort By: <%= sortable "name" %> | 
 			<%= sortable "unit_price" %>
+			 <% if current_user.role == "admin" %>
+			<%= link_to 'New Product', new_product_path, :class => 'btn btn-sm btn-info' %>
+			<% end %>
 			</div>
 		
 
@@ -98,4 +101,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, :class => 'btn btn-sm btn-info' %>

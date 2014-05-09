@@ -32,14 +32,18 @@
 		}
 	</style>
 <div class="row">
-	<div class="col-md-2">
+		<div class="col-md-2">
 		<div class="side1">
-			<div class="sidetop">
-			CATEGORIES
-			</div>
-			<div id="category" >
+			
+				<ul class="list-group">
+				  <li class="list-group-item list-group-item-success"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+				  <li class="list-group-item list-group-item-info"><%= link_to 'Order History', orders_path %></li>
+				  <li class="list-group-item"></li>
+				  <li class="list-group-item list-group-item-warning"><b>Categories</b></li>
+				<li class="list-group-item"><%= link_to 'All Categories', categories_path %></li>
+				
 					<%= render @categories %>
-				</div>
+				</ul>
 		</div>
 	</div>
 	<div class="col-md-10">

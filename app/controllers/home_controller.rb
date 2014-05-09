@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     @users = User.all
     @products = Product.all
 	@product_images = ProductImage.all
+	
 	@cart = current_cart
 	@categories = Category.all
   end

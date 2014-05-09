@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    if params[:search]
+    @products = Product.search(params[:search]).order("created_at DESC")
+    else 
     @products = Product.order(params[:sort])
+  end
      @cart = current_cart
 	@categories = Category.all
   end
@@ -28,6 +32,8 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+      @categories = Category.all
+     @cart = current_cart
   end
 
   # POST /products

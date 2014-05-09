@@ -4,8 +4,30 @@
 	<div class="row pp">
 	<div class="container">
 		<div>
+<div class="row">
+<div class="col-md-8">
 				<img src="img/original.png" alt="Logo" />
-
+</div>  
+<div class="col-md-4">      
+<%= form_tag(products_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+<%= render @cart if (params[:controller] == 'products') %>
+<%= render @cart if (params[:controller] == 'home') %>
+<%= render @cart if (params[:controller] == 'categories') %>
+<%= render @cart if (params[:controller] == 'application') %>
+<%= render @cart if (params[:controller] == 'carts') %>
+<%= render @cart if (params[:controller] == 'line_items') %>
+<%= render @cart if (params[:controller] == 'manufacturers') %>
+<%= render @cart if (params[:controller] == 'orders') %>
+<%= render @cart if (params[:controller] == 'product_images') %>
+<%= render @cart if (params[:controller] == 'registrations') %>
+<%= render @cart if (params[:controller] == 'shippers') %>
+<%= render @cart if (params[:controller] == 'static_pages') %>
+<%= render @cart if (params[:controller] == 'suppliers') %>
+</div>
+</div>
 		</div>
 		</div>
 	</div>

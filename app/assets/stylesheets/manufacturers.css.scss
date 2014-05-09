@@ -2,6 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.prod {background:#fff;  }
+.prod {background:#fff; max-height:450px; margin:10px 0; }
 .prod_img {height:250px; margin:0 0 5px 0; padding:20px;}
 .prod_txt {padding:10px 20px; border-top:#ddd solid 1px;}

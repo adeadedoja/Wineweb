@@ -31,6 +31,8 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+          @cart = current_cart
+  @categories = Category.all
   end
 
   # POST /orders
@@ -41,6 +43,8 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 	@order.add_line_items_from_cart(current_cart)
 	@order.user_id = current_user.id
+  @order.name = current_user.name
+  @order.email = current_user.email
 
     respond_to do |format|
       if @order.save

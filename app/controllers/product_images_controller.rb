@@ -12,6 +12,8 @@ class ProductImagesController < ApplicationController
   # GET /product_images/1
   # GET /product_images/1.json
   def show
+    @cart = current_cart
+  @categories = Category.all
   end
 
   # GET /product_images/new

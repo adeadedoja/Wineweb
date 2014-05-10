@@ -65,7 +65,10 @@
            <% if @order.order_status == '0' %> Waiting To Be Shipped <% elsif @order.order_status == '1' %> SHIPPED <% end %>
           </p>
           <%= link_to 'Download Order', order_path(format: 'pdf'), :class => 'btn btn-small btn-info' %>  
-      
+          <% if current_user.role == "admin" %>
+            <%= link_to 'Edit Order', edit_order_path(@order), :class => 'btn btn-small btn-danger' %> *to change order statuss
+          <% end %>  
+
           <h1>Items Ordered</h1>  
           <table class="table table-bordered">
             <thead>

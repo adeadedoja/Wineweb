@@ -6,7 +6,9 @@
      <%= f.select :pay_type, [['Pay On Delivery', 'Pay on Delivery' ], ['MasterCard', 'MasterCard']], :label => "Payment Type" %>
     <%= f.input :created_at %>
     <%= f.input :updated_at %>
+     <% if current_user.role == "admin" %>
     <%= f.input :order_status %> *change order status to 1, if shipped
+    <% end %>
   </div>
 
   <div class="form-actions">

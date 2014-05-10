@@ -13,6 +13,7 @@
         </ul>
     </div>
   </div>
+
   <div class="col-md-10">
     <div class="side1">
       <div class="sidetop">
@@ -63,6 +64,8 @@
 
            <% if @order.order_status == '0' %> Waiting To Be Shipped <% elsif @order.order_status == '1' %> SHIPPED <% end %>
           </p>
+          <%= link_to 'Download Order', order_path(format: 'pdf'), :class => 'btn btn-small btn-info' %>  
+      
           <h1>Items Ordered</h1>  
           <table class="table table-bordered">
             <thead>

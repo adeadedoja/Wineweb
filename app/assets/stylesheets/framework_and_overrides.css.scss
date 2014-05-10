@@ -42,7 +42,7 @@ main {
   @extend .container;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 145px; // accommodate the navbar
+  margin-top: 175px; // accommodate the navbar
   }
 section {
   @extend .row;
@@ -6192,3 +6192,4 @@ label,
 .prod_img im {width:100%; height:auto; }
 .sid {color:#333; size:19px; }
 #cart {position:fixed; right:0;}
+#c {color:#333;}

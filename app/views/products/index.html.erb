@@ -23,8 +23,10 @@
 			</ol>
 						Sort By: <%= sortable "name" %> | 
 			<%= sortable "unit_price" %>
+			<% if user_signed_in? %>
 			 <% if current_user.role == "admin" %>
 			<%= link_to 'New Product', new_product_path, :class => 'btn btn-sm btn-info' %>
+			<% end %>
 			<% end %>
 			</div>
 		

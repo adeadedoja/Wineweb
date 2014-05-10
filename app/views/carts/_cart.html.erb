@@ -1,7 +1,7 @@
 <ul class="nav navbar-nav navbar-right">
        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="c"> <% if user_signed_in? %> Welcome <%= current_user.name %>, <% end %>Cart (<%= cart.quantity %>) items<b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="c"> <% if user_signed_in? %> Welcome <%= current_user.name %>, <% else %> Welcome Gruest <% end %>Cart (<%= cart.quantity %>) items<b class="caret"></b> *click to view cart</a>
           <ul class="dropdown-menu" id="cd">
             <div id="cart" >
 				       <p id="notice"><%= notice %></p>

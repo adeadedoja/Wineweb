@@ -1,36 +1,3 @@
-<style>
-		img#main {
-			border: 1px #ccc solid;
-			padding: 2px;
-			margin: 10px;
-		}
-		.item nav {
-			display: none;
-			margin: 0 10px;
-		}
-		.item nav a {
-			border: 1px #ccc solid;
-			padding: 2px 2px 0;
-			display: block;
-			float: left;
-			margin: 2px;
-			-webkit-transition: all .3s ease-in-out;
-			-moz-transition: all .3s ease-in-out;	
-			transition: all .3s ease-in-out;		
-		}
-		.item nav a:first-child {
-			margin-left: 0;
-		}
-		.item nav a:hover {
-			-webkit-transform: scale(1.1);
-			-moz-transform: scale(1.1);	
-			transform: scale(1.1);				
-		}
-		.item nav a.active {
-			background: #FEFFC0;
-			border-color: #ECD95C;
-		}
-	</style>
 <div class="row">
 		<div class="col-md-2">
 		<div class="side1">
@@ -61,16 +28,7 @@
 					<ol class="product_image">
 						<%= render @product_image %>
 					</ol>
-					<article class="item">
-						<aside class="preview">
-							<img id="main" src="/images/shoe-inside.png" width="300" height="220" alt="Alt title of image">
-							<nav>
-								<a href="/images/shoe-inside.png"><img src="/images/shoe-inside.png" width="100" height="73" alt="Side of the shoe"></a>
-								<a href="/images/shoe-front.png"><img src="/images/shoe-front.png" width="91" height="73" alt="Front of the shoe"></a>		
-								<a href="/images/shoe-back.png"><img src="/images/shoe-back.png" width="91" height="73" alt="Back of the shoe"></a>		
-							</nav>
-						</aside>
-					</article>
+					
 					<br />
 					<div class="clear"></div>
 					<h1><%= "#{@product.impressionist_count} Views" %></h1>

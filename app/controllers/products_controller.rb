@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
     end
      @cart = current_cart
 	@categories = Category.all
+  @product_images = ProductImage.all
   end
 
   # GET /products/1

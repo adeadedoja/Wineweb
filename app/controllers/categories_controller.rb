@@ -15,6 +15,7 @@ class CategoriesController < ApplicationController
   @categories = Category.all
 	@categories = Category.all
 	@products = Product.where(:category_id => params[:id])
+  @product_images = ProductImage.all
   end
 
   # GET /categories/new

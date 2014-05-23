@@ -1,6 +1,6 @@
 body {
- background: url('/img/2.png');
- color: #333;
+  background-color: #fff;
+  color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -19,8 +19,9 @@ pre {
 }
 
 a {
-  color: #444;
+  color: #000;
   &:visited {
+    color: #666;
   }
   &:hover {
     color: #fff;

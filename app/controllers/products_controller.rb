@@ -22,6 +22,9 @@ class ProductsController < ApplicationController
 	@product_image = @product.product_image
 	@categories = Category.all
      @cart = current_cart
+      @reviews = Review.where(:product_id => params[:id])
+     @review = Review.new
+
   end
 
   # GET /products/new

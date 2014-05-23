@@ -1,4 +1,6 @@
 Work::Application.routes.draw do
+  resources :reviews
+
   resources :orders
 
   resources :line_items

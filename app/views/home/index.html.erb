@@ -1,8 +1,4 @@
-<style type="text/css">
- body {
- background: url('/img/1.jpg') top left repeat-x #fafafa;
- } 
- </style>
+
 <br />
 <br />
 
@@ -41,8 +37,8 @@
 	<% @products.each do |product| %>
   <div class="col-md-4">
 	<div class="prod">
-		<div class="prod_img"><%= image_tag @product_images.first.picture.url %></div>
-		<div class="prod_txt"><%= product.name %><br />
+		<div class="prod_img"><%= image_tag product.available_size %></div>
+		<div class="prod_txt"><%= product.name %>
 					<b><%= number_to_currency(product.unit_price) %></b><br />
 		<%= link_to('View Product', product, :class => 'btn btn-primary btn-sm')  %>
 		<%= button_to 'Add to Cart' , line_items_path(:product_id => product), :remote => true %>

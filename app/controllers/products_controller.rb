@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
       @categories = Category.all
      @cart = current_cart
     @product = Product.new(product_params)
-
+    @product_images = ProductImage.all
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }

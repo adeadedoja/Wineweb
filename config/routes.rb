@@ -1,4 +1,6 @@
 Work::Application.routes.draw do
+  get 'pages/about'
+
   resources :reviews
 
   resources :orders

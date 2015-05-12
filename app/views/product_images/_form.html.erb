@@ -1,6 +1,6 @@
-<%= simple_form_for(@product_image) do |f| %> 
+<%= simple_form_for(@product_image, :html => {:multipart => true}) do |f| %>
   <%= f.error_notification %>
-
+<%= @product_image.errors.full_messages %>
   <div class="form-inputs">
     <%= f.collection_select(:product_id,Product.all,:id,:name, {prompt: 'Select Product'}) %>
     <%= f.input :desc %>

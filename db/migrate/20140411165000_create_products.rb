@@ -13,6 +13,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :available_size
       t.string :available_color
       t.integer :quantity_sold
+      
 
       t.timestamps
     end

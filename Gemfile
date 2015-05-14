@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '1.9.3'
 gem 'rails', '4.1.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'paperclip', github: 'thoughtbot/paperclip'
@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'thin'
 gem 'impressionist'
 gem 'rspec-rails', '2.13.1'
-gem 'prawn'
+gem 'prawn', '~> 1.3.0'
 group :development, :test  do
     gem 'sqlite3'
 end

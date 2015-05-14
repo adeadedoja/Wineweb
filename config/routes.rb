@@ -1,5 +1,6 @@
 Work::Application.routes.draw do
-  get 'pages/about'
+
+  match '/about', to: 'pages#about', via: 'get'
 
   resources :reviews
 

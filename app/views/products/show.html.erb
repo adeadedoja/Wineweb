@@ -34,6 +34,7 @@
 					<div class="clear"></div>
 					<h1><%= "#{@product.impressionist_count} Views" %></h1>
 					<%= button_to 'Add to Cart' , line_items_path(:product_id => @product.id), :remote => true %>
+					<a href="mailto:dd@dd.com" class="btn btn-danger btn-sm">Send To Friend</a>
 					<% if !current_user.nil? and current_user.admin? %>
 					<%= link_to 'Edit', edit_product_path(@product), :class => 'btn btn-primary btn-sm' %>|<%= link_to 'Back', products_path, :class => 'btn btn-primary btn-sm' %>
 					<% end %>

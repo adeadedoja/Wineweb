@@ -1,12 +1,14 @@
 <%# navigation styled for Bootstrap 3.0 %>
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="row pp">
 	<div class="container">
 		<div>
 <div class="row">
-<div class="col-md-8">
-				<img src="img/original.png" alt="Logo" />
+<div class="col-md-3">
+        <img src="img/original.png" alt="Logo" />
+</div>  
+<div class="col-md-5">
+				<a href="http://www.topsmarkets.com"><img src="img/1a.jpg" alt="ad" /></a>
 </div>  
 <div class="col-md-4">      
 <%= form_tag(products_path, :method => "get", id: "search-form") do %>
@@ -26,6 +28,7 @@
 <%= render @cart if (params[:controller] == 'static_pages') %>
 <%= render @cart if (params[:controller] == 'suppliers') %>
 </div>
+<div class="clear"></div>
 </div>
 		</div>
 		</div>
